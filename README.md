@@ -76,13 +76,13 @@ e.g. From single node to cluster:
 
 ## Command
 
-** for migration **
+**for migration**
 
 ```
 python redis_migrate configs/config.json migrate 
 ```
 
-** for verification **
+**for verification**
 
 ```
 python redis_migrate configs/config.json verify
