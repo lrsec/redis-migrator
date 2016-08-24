@@ -1,0 +1,16 @@
+{
+  "origin_cluster": {
+    "hosts": ["redis_node1_slave.com:6379", "redis_node2_slave.com:6379"]
+  },
+  "target_cluster": {
+    "host_pattern": "redis_target_cluster_{}.com",
+    "port_pattern": "637{}",
+    "start": 0,
+    "end": 9
+  },
+  "key": {
+    "pattern": "key:*:version",
+    "type": "string",
+    "router": "lambda key : int(key.split(':')[1]) % 10"
+  }
+}

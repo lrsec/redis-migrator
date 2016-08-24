@@ -1,0 +1,19 @@
+{
+  "origin_cluster": {
+    "host_pattern": "redis_origin_cluster_{}_slave.com",
+    "port_pattern": "637{}",
+    "start": 0,
+    "end": 9
+  },
+  "target_cluster": {
+    "host_pattern": "redis_target_cluster_{}_master.com",
+    "port_pattern": "637{}",
+    "start": 0,
+    "end": 9
+  },
+  "key": {
+    "pattern": "key:*:status",
+    "type": "string",
+    "router": "lambda key : int(key.split(':')[1]) % 10"
+  }
+}
